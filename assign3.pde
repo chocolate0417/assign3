@@ -197,8 +197,8 @@ void mousePressed(){
     
     // --------------- put you code here -------
        
-       int mx=(mouseX-ix)/SLOT_SIZE;
-       int my=(mouseY-iy)/SLOT_SIZE;
+       int mx=int((mouseX-ix)/SLOT_SIZE);
+       int my=int((mouseY-iy)/SLOT_SIZE);
        if (mx>=4){
          mx=3;
        }
@@ -215,7 +215,7 @@ void mousePressed(){
          clickCount++;
          showSlot(mx,my,SLOT_SAFE);
          System.out.println("slot[mx][my]:"+slot[mx][my]);
-         if(bombCount==totalSlots-clickCount)
+         if(int(bombCount==totalSlots-clickCount))
          {gameState = GAME_WIN;}
        }
      
