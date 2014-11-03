@@ -119,6 +119,13 @@ void setBombs(){
       A = A--;
     }
   }
+for(int i=0;i<=3;i++){
+   for(int j=0;j<=3;j++){
+    if( slot[i][j]!=SLOT_BOMB){
+      slot[i][j]=SLOT_SAFE;
+    }
+  }
+  }
 
   // ---------------------------------------
 }
@@ -216,7 +223,7 @@ void mousePressed(){
          slot[mx][my]=SLOT_SAFE;
          showSlot(mx,my,SLOT_SAFE);
       }
-         if(bombCount==totalSlots-clickCount)
+         if(bombCount==totalSlots-SLOT_SAFE)
          {gameState = GAME_WIN;}
          
        }     
