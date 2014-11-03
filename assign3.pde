@@ -78,7 +78,7 @@ void draw(){//graphic
     case GAME_LOSE:
           textSize(18);
           fill(0);
-          text("YOU LOSE !!",width/3,30);
+          //text("YOU LOSE !!",width/3,30);
           break;
   }
 }
