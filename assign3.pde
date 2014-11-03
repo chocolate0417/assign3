@@ -85,20 +85,18 @@ void draw(){//graphic
 
 int countNeighborBombs(int col,int row){
   // -------------- Requirement B ---------
-   /*int nx=(mouseX-ix)/SLOT_SIZE;
-   int ny=(mouseY-iy)/SLOT_SIZE;
-   if (nx>=4){
-      nx=3;
-      }
-   if (ny>=4){
-      ny=3;
-      }  
-  for(int nx-1,nx+1,){
-  for(ny-1,ny+1,){
-  if 
-  }
-  }*/
-  return 0;
+/* int bombnum;
+ for(int o=(col-1);o<=(col+1);o++){
+ for(int p=(row-1);p<=(row+1);p++){
+  
+    if ( slot[o][p]=SLOT_BOMB){
+bombnum++;
+}
+  return bombnum++;
+}
+}
+}*/
+return 0;
 }
 
 void setBombs(){
@@ -223,9 +221,8 @@ void mousePressed(){
          slot[mx][my]=SLOT_SAFE;
          showSlot(mx,my,SLOT_SAFE);
       }
-         if(bombCount==totalSlots-SLOT_SAFE)
-         {gameState = GAME_WIN;}
-         
+         if(bombCount==(totalSlots-SLOT_SAFE))
+         {gameState = GAME_WIN;}  
        }     
        
        // -------------------------
