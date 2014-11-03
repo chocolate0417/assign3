@@ -73,12 +73,12 @@ void draw(){//graphic
     case GAME_WIN:
           textSize(18);
           fill(0);
-          //text("YOU WIN !!",width/3,30);
+          text("YOU WIN !!",width/3,30);
           break;
     case GAME_LOSE:
           textSize(18);
           fill(0);
-          //text("YOU LOSE !!",width/3,30);
+          text("YOU LOSE !!",width/3,30);
           break;
   }
 }
@@ -215,14 +215,9 @@ void mousePressed(){
          clickCount++;
          slot[mx][my]=SLOT_SAFE;
          showSlot(mx,my,SLOT_SAFE);
-         }
-        // System.out.println("slot[mx][my]:"+slot[mx][my]);
+      }
          if(bombCount==totalSlots-clickCount)
          {gameState = GAME_WIN;}
-         println(clickCount);
-         
-         //if ( slot[mx][my]==SLOT_SAFE){
-        //println("slot[mx][my]:"+slot[mx][my]);
          
        }     
        
