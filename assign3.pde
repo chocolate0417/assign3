@@ -30,7 +30,7 @@ PImage bomb, flag, cross ,bg;
 
 void setup(){
   size (640,480);
- textFont( createFont("font/Square_One.ttf",24) , 24);
+ textFont( createFont("font/Square_One.ttf",20) , 20);
   bomb=loadImage("data/bomb.png");
   flag=loadImage("data/flag.png");
   cross=loadImage("data/cross.png");
@@ -73,7 +73,7 @@ void draw(){//graphic
     case GAME_WIN:
           textSize(18);
           fill(0);
-          text("YOU WIN !!",width/3,30);
+          //text("YOU WIN !!",width/3,30);
           break;
     case GAME_LOSE:
           textSize(18);
