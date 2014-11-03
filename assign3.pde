@@ -213,28 +213,27 @@ void mousePressed(){
        else
        {
          clickCount++;
+         slot[mx][my]=SLOT_SAFE;
          showSlot(mx,my,SLOT_SAFE);
-         System.out.println("slot[mx][my]:"+slot[mx][my]);
-         if(int(bombCount==totalSlots-clickCount))
+         }
+        // System.out.println("slot[mx][my]:"+slot[mx][my]);
+         if(bombCount==totalSlots-clickCount)
          {gameState = GAME_WIN;}
-       }
-     
-     
-     
+         println(clickCount);
+         
+         //if ( slot[mx][my]==SLOT_SAFE){
+        //println("slot[mx][my]:"+slot[mx][my]);
+         
+       }     
        
-       
-    // -------------------------
+       // -------------------------
     
   }
-  
-}
-
-// press enter to start
+  // press enter to start
 void keyPressed(){
   if(key==ENTER && (gameState == GAME_WIN || 
                     gameState == GAME_LOSE)){
      gameState = GAME_START;
   }
 }
-
 
