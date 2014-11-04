@@ -67,7 +67,9 @@ void draw(){//graphic
           break;
     case GAME_RUN:
           //---------------- put you code here ----
-         //clickCount
+          if(bombCount==(totalSlots-clickCount))
+         {gameState = GAME_WIN;}  
+           
          // -----------------------------------
           break;
     case GAME_WIN:
@@ -85,16 +87,28 @@ void draw(){//graphic
 
 int countNeighborBombs(int col,int row){
   // -------------- Requirement B ---------
-/* int bombnum;
+/*int bombnum=0;
  for(int o=(col-1);o<=(col+1);o++){
  for(int p=(row-1);p<=(row+1);p++){
-  
-    if ( slot[o][p]=SLOT_BOMB){
+ if(o<0){
+  o=0;
+}
+ if(o>3){
+  o=3;
+}
+ if(p<0){
+  p=0;
+}
+ if(p>3){
+  p=3;
+}
+ if (slot[o][p]==SLOT_BOMB){
 bombnum++;
+
 }
-  return bombnum++;
 }
 }
+return bombnum++;
 }*/
 return 0;
 }
@@ -117,14 +131,6 @@ void setBombs(){
       A = A--;
     }
   }
-for(int i=0;i<=3;i++){
-   for(int j=0;j<=3;j++){
-    if( slot[i][j]!=SLOT_BOMB){
-      slot[i][j]=SLOT_SAFE;
-    }
-  }
-  }
-
   // ---------------------------------------
 }
 
@@ -214,19 +220,16 @@ void mousePressed(){
        if (slot[mx][my]==SLOT_BOMB){//press "2" lose 
        showSlot(mx,my,SLOT_DEAD);
        gameState = GAME_LOSE;//switch "lose state"
+       }else if
+      (slot[mx][my]==SLOT_OFF){
+      slot[mx][my] = SLOT_SAFE;
+      showSlot(mx,my, SLOT_SAFE);
+      clickCount++;
        }
-       else
-       {
-         clickCount++;
-         slot[mx][my]=SLOT_SAFE;
-         showSlot(mx,my,SLOT_SAFE);
-      }
-         if(bombCount==(totalSlots-SLOT_SAFE))
-         {gameState = GAME_WIN;}  
-       }     
+       else{}
        
        // -------------------------
-    
+       }
   }
   // press enter to start
 void keyPressed(){
